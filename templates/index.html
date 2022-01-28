@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,700;1,400;1,500&family=Lato&family=Playfair+Display:wght@600&family=Source+Serif+Pro:wght@700&display=swap" rel="stylesheet">
+<title>Hermetic Mishaps</title>
+<link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='favicon-32x32.png') }}">
+</head>
+<body>
+    <div id="top-bar">
+        <div style="width: 2.5%;"></div>
+        <div id="head-text">
+            <h1 style="font-family: 'Source Serif Pro', serif; font-size: 55px; color: #31291a;">Hermetic Mishaps</h1>
+        </div>
+        <div id="q-mark" style="text-align: center;">
+            <a id="showhelp" href="#" data-toggle="modal" data-target="#exampleModalCenter" style="font-size: 30px;"><i class="fas fa-question-circle"></i></a>
+        </div>
+    </div>
+
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+              <strong>Hermes</strong> was the Greek god of many things — among them was language. While he was
+              regarded for his eloquence and considered a patron of languages, I'm not too confident he'd approve
+              of any of the words on this website.
+              <hr/>
+              Every day, this webpage provides a new randomly-generated word derived from Greek/Latin roots, prefixes,
+              and suffixes. The word may or may not exist.
+              <hr/>
+              <strong>NOTE:</strong> this is currently a proof-of-concept and work-in-progress, so the dictionaries are
+              very small and functionality is limited.
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div style="display: flex; width: 100%; padding: 5px; padding-top: 7%;">
+        <div style="text-align: center; width: 70%;">
+            <p style="font-family: 'Lato', sans-serif; font-size: 22.5px; color: #565656;">The psuedo-word of <abbr title="{{ time }}">the day</abbr> is...</p>
+        </div>
+        <div style="width: 30%"></div>
+    </div>
+    
+    <div id="bigbox">
+
+        <div id="wordbox">
+            <div id="prefixbox">
+                <p>{{ word_arr[0] }}</p>
+            </div>
+            <div><p class="dots">&sdot;</p></div>
+            <div id="basebox">
+                <p>{{ word_arr[1] }}</p>
+            </div>
+            <div><p class="dots">&sdot;</p></div>
+            <div id="suffixbox">
+                <p>{{ word_arr[2] }}</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="bigmeaningbox">
+        <div id="meaningbox">
+            <p>Lit. {{ meaning }}</p>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/b013a87d2e.js" crossorigin="anonymous"></script>
+    <script>
+        window.onload = function(){
+            document.getElementById('meaningbox').style.width = $('#wordbox').width()+"px";
+        };
+        
+        function showPopup() {
+            // show the mask
+            $('#mask').fadeto(500, 0.3);
+
+            // show the popup
+            $('#popup').show();
+        }
+        $(document).ready(function() {
+
+            $("#showhelp").click(function() {
+                showPopup();
+            });
+
+            $("#popup").click(function() {
+
+                $(this).hide();
+                $("#mask").hide();
+
+            });
+
+        });
+
+    </script>
+</body>
+</html>
