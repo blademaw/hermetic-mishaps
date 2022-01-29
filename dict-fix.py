@@ -4,7 +4,7 @@ import numpy as np
 import os
 
 THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
-ARTICLE_ENDERS = ('a', 'to', 'the', 'one', 'an')
+ARTICLE_ENDERS = ('a', 'to', 'the', 'one', 'an', 'verb')
 
 def process_dicts(files, delim):
     """Function to attempt to process dictionaries given files.

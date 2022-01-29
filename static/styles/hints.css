@@ -1,0 +1,33 @@
+.popover-header {
+    color: blue;
+    font-size: 15px;
+}
+.popover-body {
+    background-color: #fdfdfb;
+    color: #31291a;
+}
+
+.popover {
+    border-width: 2px;
+}
+
+.popover-body p {
+    font-family: 'Lato', sans-serif;
+}
+
+.popover-body h2 {
+    font-family: 'Source Serif Pro', serif;
+    font-size: 25px;
+}
+
+.popover-body #prefixhead {
+    color: rgb(98,173,147);
+}
+
+.popover-body #basehead {
+    color: rgb(98,124,173);
+}
+
+.popover-body #suffixhead {
+    color: rgb(173,98,124);
+}

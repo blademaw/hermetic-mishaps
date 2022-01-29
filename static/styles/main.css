@@ -43,14 +43,35 @@
     font-style: italic;
     font-size: 60px;
     color: #565656;
+    -moz-transition: all 0.2 ease-in;
+    -o-transition: all 0.2 ease-in;
+    -webkit-transition: all 0.2 ease-in;
+    transition: all 0.2 ease-in;
 }
 
-#wordbox p:hover {
+#wordbox div:hover p:hover {
     cursor: default;
+    -moz-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
 }
 
 #prefixbox {
     text-align: left;
+}
+
+
+#prefixbox p:hover {
+    text-shadow: 0px 0px 15px rgb(98,173,147);
+}
+
+#basebox p:hover {
+    text-shadow: 0px 0px 15px rgb(98,124,173);
+}
+
+#suffixbox p:hover {
+    text-shadow: 0px 0px 15px rgb(173,98,124);
 }
 
 #basebox {
@@ -80,11 +101,20 @@ body {
 }
 
 #q-mark a {
-    color: black;
+    color: #31291a;
     text-decoration: none;
+    -moz-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
 }
 
 #q-mark a:hover {
-    color: black;
+    color: #725d3a;
+    cursor: help;
     text-decoration: none;
+    -moz-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
 }
