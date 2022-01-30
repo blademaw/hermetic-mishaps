@@ -32,5 +32,5 @@ def generate_word(files, seed):
     return (prefix, root, suffix), meaning, const_meaning_arr, ex_arr
 
 
-# w, m = generate_word(("processed_pres", "processed_roots", "processed_sufs"))
-# print(f"Word:\t{w}\nLit.\t{m}")
+# w, m, _, _ = generate_word(("processed_pres", "processed_roots", "processed_sufs"), 123211124)
+# print(f"Word:\t{'-'.join(w)}\nLit.\t{m}")
