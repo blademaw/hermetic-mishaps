@@ -4,6 +4,7 @@ import numpy as np
 import os
 
 THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
+VOWELS = ('a', 'e', 'i', 'o', 'u')
 
 def generate_word(files, seed):
     # set seed
@@ -23,6 +24,10 @@ def generate_word(files, seed):
     ex_arr = (pre.iloc[inds[0]].ex, base.iloc[inds[1]].ex, suf.iloc[inds[2]].ex)
     
     # compile word & meaning
+    if root[-1] not in VOWELS and suffix[-1] not in VOWELS:
+        # add 'o' to separate consonants
+        root += 'o'
+    
     meaning = " ".join((pre.iloc[inds[0]].meaning, base.iloc[inds[1]].meaning))
     if suf.iloc[inds[2]].end == 1:
         meaning = suf.iloc[inds[2]].meaning + " " + meaning
