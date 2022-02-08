@@ -24,7 +24,7 @@ def generate_word(files, seed):
     ex_arr = (pre.iloc[inds[0]].ex, base.iloc[inds[1]].ex, suf.iloc[inds[2]].ex)
     
     # compile word & meaning
-    if root[-1] not in VOWELS and suffix[-1] not in VOWELS:
+    if root[-1] not in VOWELS and suffix[0] not in VOWELS:
         # add 'o' to separate consonants
         root += 'o'
     
